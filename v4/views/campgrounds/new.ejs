@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">YelpCamp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-0">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/">LogIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/">LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row" style="margin: 25px auto;">
+                <h1 style="text-align: center;">Create a New Campground!</h1>
+                <div style="width: 30%; margin: 25px auto;">
+                    <form action="/campgrounds" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name = "name" placeholder="name">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name = "image" placeholder="image url">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name = "description" placeholder="description">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                    </div>           
+                </form>
+                <a href="/campgrounds">Go Back</a>
+                </div>
+            </div>
+        </div>
+        <p>Trademark YelpCamp 2015</p>
+    </body>
+    </html>
+</html>

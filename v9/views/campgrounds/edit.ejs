@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-0">
+                <% if(!currentUser) {%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">LogIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">SignUp</a>
+                    </li>
+                    <% } else{ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Signed in as <%= currentUser.username %> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">LogOut</a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </nav>
+    <!--<div class="container">
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    </div>
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="row" style="margin: 25px auto;">
+            <h1 style="text-align: center;">Edit <%= campground.name %> </h1>
+            <div style="width: 30%; margin: 25px auto;">
+                <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name = "campground[name]" value = "<%= campground.name %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name = "campground[price]" value = "<%= campground.price %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name = "campground[image]" value = "<%= campground.image %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name = "campground[description]" value = "<%= campground.description %>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>           
+                </form>
+            </div>
+        </div>
+    </div>
+    <p>Trademark YelpCamp 2015</p>
+</body>
+</html>

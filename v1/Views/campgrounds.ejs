@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">YelpCamp</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav justify-content-right">
+                    <li class="nav-item">
+                      <a class="nav-link " href="/">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">LogOut</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    <div class = "container">
+        <header class="jumbotron">
+            <div class="container">
+                 <h1>This is the Campgrounds Page</h1>
+                <p>View Our Hand-Picked Campgrounds From All Over The World!!</p>
+                <p>
+                  <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground!!</a>
+                </p>
+            </div>
+        </header>
+<div class="row" style="display: flex; flex-wrap: wrap; max-height: 20px;">    
+<% campgrounds.forEach(function(campground){ %>
+    <div class="col-md-3 col-sm-6">
+            <img class = "img-thumbnail" src="<%= campground.image %>">
+            <div class="caption">
+                <h4> <%= campground.name %> </h4>
+            </div>
+    </div>
+<% }); %>
+</div>
+
+<p>Trademark YelpCamp 2015</p>
+</div>
+
+</body>
+</html>
